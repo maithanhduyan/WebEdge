@@ -40,7 +40,7 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding(ENCCODING);
+		long start = System.nanoTime();
 		response.setCharacterEncoding(ENCCODING);
 		response.setContentType("image/jpeg");
 		OutputStream out = response.getOutputStream();
@@ -54,7 +54,7 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 		// draw a string
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("Dialog", Font.PLAIN, 28));
-		g.drawString(generateCaptcha(), 10, 50);
+		g.drawString(generateCaptcha(), 10, 25);
 		// draw a line
 		g.setColor(Color.RED);
 		g.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -81,6 +81,8 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 		// send back image to the client
 		ImageIO.write(image, "jpeg", out);
 		out.close();
+		long end = System.nanoTime();
+		System.out.println("Generate Captcha Image: " + (end - start) / 1000000 + " ms.");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -89,20 +91,10 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 	}
 
 	@SuppressWarnings("unused")
-	private void out(BufferedImage image, HttpServletResponse response) throws IOException {
-		long start = System.nanoTime();
-		PrintWriter out = response.getWriter();
-		out.println(image);
-		long end = System.nanoTime();
-		System.out.println("Out: " + (end - start) / 1000 + " ms.");
-	}
-
-	@SuppressWarnings("unused")
 	private String generateCaptcha() {
 		int captchaLength = 3;
 		Random serverSeed = new Random();
 		Random randomSource = new Random(serverSeed.nextLong());
-		int arr = randomSource.nextInt();
 		StringBuilder captcha = new StringBuilder();
 		for (int i = 0; i < captchaLength; i++) {
 			captcha.append(ALPHABET[randomSource.nextInt(ALPHABET.length)]);
