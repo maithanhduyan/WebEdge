@@ -9,7 +9,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.servlet.Servlet;
@@ -41,6 +40,7 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		long start = System.nanoTime();
+		String captcha = generateCaptcha();
 		response.setCharacterEncoding(ENCCODING);
 		response.setContentType("image/jpeg");
 		OutputStream out = response.getOutputStream();
@@ -54,19 +54,19 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 		// draw a string
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("Dialog", Font.PLAIN, 28));
-		g.drawString(generateCaptcha(), 10, 25);
+		g.drawString(captcha, 50, 25);
 		// draw a line
 		g.setColor(Color.RED);
 		g.setFont(new Font("Dialog", Font.BOLD, 18));
-		g.drawLine(random(width), random(height/2), random(width), random(height/2));
+		g.drawLine(random(width), random(height / 2), random(width), random(height / 2));
 		// draw a line
 		g.setColor(Color.GREEN);
 		g.setFont(new Font("Dialog", Font.BOLD, 18));
-		g.drawLine(random(width), random(height/2), random(width), random(height/2));
+		g.drawLine(random(width), random(height / 2), random(width), random(height / 2));
 		// draw a line
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("Dialog", Font.BOLD, 18));
-		g.drawLine(random(width), random(height/2), random(width), random(height/2));
+		g.drawLine(random(width), random(height / 2), random(width), random(height / 2));
 		// draw a line
 		g.setColor(Color.RED);
 		g.setFont(new Font("Dialog", Font.BOLD, 28));
@@ -82,7 +82,7 @@ public class CaptchaBuilder extends HttpServlet implements Servlet {
 		ImageIO.write(image, "jpeg", out);
 		out.close();
 		long end = System.nanoTime();
-		System.out.println("Generate Captcha Image: " + (end - start) / 1000000 + " ms.");
+		System.out.println("Generate Captcha Image: " + captcha + " took " + (end - start) / 1000000 + " ms.");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
