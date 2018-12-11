@@ -30,6 +30,14 @@
 		<servlet-name>barcode.builder</servlet-name>
 		<url-pattern>/barcode</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>token.builder</servlet-name>
+		<servlet-class>com.webedge.token.servlet.TokenBuilder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>token.builder</servlet-name>
+		<url-pattern>/generatetoken</url-pattern>
+	</servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
