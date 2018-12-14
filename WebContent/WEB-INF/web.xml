@@ -38,6 +38,14 @@
 		<servlet-name>token.builder</servlet-name>
 		<url-pattern>/generatetoken</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>htmlfilter</servlet-name>
+		<servlet-class>com.webedge.htmlfilter.servlet.HTMLFilter</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>htmlfilter</servlet-name>
+		<url-pattern>/htmlfilter</url-pattern>
+	</servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
