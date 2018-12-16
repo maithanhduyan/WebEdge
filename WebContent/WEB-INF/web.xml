@@ -46,6 +46,14 @@
 		<servlet-name>htmlfilter</servlet-name>
 		<url-pattern>/htmlfilter</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>autorefresh</servlet-name>
+		<servlet-class>com.webedge.autorefresh.servlet.AutoRefresh</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>autorefresh</servlet-name>
+		<url-pattern>/autorefresh</url-pattern>
+	</servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
