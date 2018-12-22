@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>WebEdge</display-name>
+	
+	<!-- Listener -->
+	
 
 	<!-- Servlet -->
 	<servlet>
@@ -67,7 +70,7 @@
 
 	<!-- Session MaxInactiveInterval <Minute> -->
 	<session-config>
-		<session-timeout>10</session-timeout>
+		<session-timeout>60</session-timeout>
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 
