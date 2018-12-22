@@ -8,7 +8,7 @@
 	<!-- Servlet -->
 	<servlet>
 		<servlet-name>index</servlet-name>
-		<servlet-class>com.wedge.servlet.Home</servlet-class>
+		<servlet-class>com.webedge.servlet.Home</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>index</servlet-name>

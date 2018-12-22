@@ -1,7 +1,7 @@
 /**
  * WebEdge 2018
  */
-package com.wedge.servlet;
+package com.webedge.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.Servlet;
