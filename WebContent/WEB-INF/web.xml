@@ -1,77 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>WebEdge</display-name>
-	
-	<!-- Listener -->
-	
-
-	<!-- Servlet -->
-	<servlet>
-		<servlet-name>index</servlet-name>
-		<servlet-class>com.webedge.servlet.Home</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>index</servlet-name>
-		<url-pattern>/index</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>captcha.builder</servlet-name>
-		<servlet-class>com.webedge.captcha.servlet.CaptchaBuilder</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>captcha.builder</servlet-name>
-		<url-pattern>/captcha</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>barcode.builder</servlet-name>
-		<servlet-class>com.webedge.barcode.servlet.BarcodeBuilder</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>barcode.builder</servlet-name>
-		<url-pattern>/barcode</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>token.builder</servlet-name>
-		<servlet-class>com.webedge.token.servlet.TokenBuilder</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>token.builder</servlet-name>
-		<url-pattern>/generatetoken</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>htmlfilter</servlet-name>
-		<servlet-class>com.webedge.htmlfilter.servlet.HTMLFilter</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>htmlfilter</servlet-name>
-		<url-pattern>/htmlfilter</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>autorefresh</servlet-name>
-		<servlet-class>com.webedge.autorefresh.servlet.AutoRefresh</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>autorefresh</servlet-name>
-		<url-pattern>/autorefresh</url-pattern>
-	</servlet-mapping>
-
-	<welcome-file-list>
-		<welcome-file>index</welcome-file>
-	</welcome-file-list>
-
-	<!-- Error -->
-	<error-page>
-		<error-code>404</error-code>
-		<location>/WEB-INF/error/404.jsp</location>
-	</error-page>
-
-	<!-- Session MaxInactiveInterval <Minute> -->
-	<session-config>
-		<session-timeout>60</session-timeout>
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>WebEdge</display-name>
+  <servlet>
+    <servlet-name>index</servlet-name>
+    <servlet-class>com.webedge.servlet.Home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>captcha.builder</servlet-name>
+    <servlet-class>com.webedge.captcha.servlet.CaptchaBuilder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>captcha.builder</servlet-name>
+    <url-pattern>/captcha</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>barcode.builder</servlet-name>
+    <servlet-class>com.webedge.barcode.servlet.BarcodeBuilder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>barcode.builder</servlet-name>
+    <url-pattern>/barcode</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>token.builder</servlet-name>
+    <servlet-class>com.webedge.token.servlet.TokenBuilder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>token.builder</servlet-name>
+    <url-pattern>/generatetoken</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>htmlfilter</servlet-name>
+    <servlet-class>com.webedge.htmlfilter.servlet.HTMLFilter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>htmlfilter</servlet-name>
+    <url-pattern>/htmlfilter</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>autorefresh</servlet-name>
+    <servlet-class>com.webedge.autorefresh.servlet.AutoRefresh</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>autorefresh</servlet-name>
+    <url-pattern>/autorefresh</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/error/404.jsp</location>
+  </error-page>
+  <session-config>
+    <session-timeout>60</session-timeout>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
 </web-app>
