@@ -18,11 +18,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- JAX-WS Java SOAP -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 			<version>2.2.10</version>
 		</dependency>
+		<!--/JAX-WS Java SOAP -->
+
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
@@ -34,14 +37,6 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.0.Final</version>
 		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
@@ -101,6 +96,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-transport-http -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-http</artifactId>
+			<version>1.7.9</version>
 		</dependency>
 
 	</dependencies>
