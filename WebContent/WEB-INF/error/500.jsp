@@ -1,1 +1,1 @@
-File not found !
+HTTP Status 500 – Internal Server Error
