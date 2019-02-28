@@ -53,7 +53,15 @@
 		<servlet-name>customjsptag</servlet-name>
 		<url-pattern>/customjsptag</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>CasinoHome</servlet-name>
+		<url-pattern>/casino</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CasinoHome</servlet-name>
+		<servlet-class>com.webedge.casino.GameManageServlet</servlet-class>
+	</servlet>
 	<servlet>
 		<servlet-name>index</servlet-name>
 		<servlet-class>com.webedge.servlet.Home</servlet-class>

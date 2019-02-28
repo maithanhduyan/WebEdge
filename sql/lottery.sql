@@ -1,0 +1,23 @@
+CREATE TABLE lottery (
+id   SERIAL PRIMARY KEY,
+ngayxoso DATE,
+dai VARCHAR(30),
+giaidacbiet NUMERIC,
+giainhat NUMERIC(6),
+giainhi NUMERIC(5),
+giaiba1 NUMERIC(5),
+giaiba2 NUMERIC(5),
+giaitu1 NUMERIC(5),
+giaitu2 NUMERIC(5),
+giaitu3 NUMERIC(5),
+giaitu4 NUMERIC(5),
+giaitu5 NUMERIC(5),
+giaitu6 NUMERIC(5),
+giaitu7 NUMERIC(5),
+giainam NUMERIC(4),
+giaisau1 NUMERIC(4),
+giaisau2 NUMERIC(4),
+giaisau3 NUMERIC(4),
+giaibay NUMERIC(3),
+giaitam NUMERIC(2)
+)
